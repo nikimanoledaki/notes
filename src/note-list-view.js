@@ -13,5 +13,6 @@
   View.prototype.createString = function() {
     this.string = '<ul><li><div>' + this.array.join('</div></li><li><div>') + '</div></li></ul>'
   }
+  
   exports.View = View
 })(this)
