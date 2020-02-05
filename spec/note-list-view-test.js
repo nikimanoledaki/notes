@@ -5,7 +5,7 @@
     list.newNote("Favourite drink: seltzer")
 
     var view = new View();
-    view.inputList(list.array)
+    view.inputList(list)
     view.createString()
 
     if (view.string !== "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>") {
