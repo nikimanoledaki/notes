@@ -3,11 +3,8 @@
     var list = new List();
     list.newNote("Favourite drink: seltzer")
     
-    if (list.array[0] !== 'Favourite drink: seltzer') {
-      throw new Error("Assertion is not truthy")
-    } else {
-      console.log("Test passes")
-    }
+    assert.isTrue(list.array[0] === 'Favourite drink: seltzer');
+
   }
   
   testArrayReturnsNotes();  

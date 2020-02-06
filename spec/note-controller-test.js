@@ -51,6 +51,7 @@
   var controller = new Controller()
   controller.addNote("Test")
   controller.inputArray()
+
   var element = document.createElement('div');
   element.setAttribute('id', 'app');
   controller.printApp();
@@ -66,14 +67,17 @@
   var controller = new Controller()
   controller.addNote("Test")
   controller.inputArray()
+
   var fakeDiv = {
     innerHTML: ""
   }
+  
   var fakeDocument = {
     getElementById: function() {
       return fakeDiv
     }
   }
+  
   controller.printApp(fakeDocument)
 
   var element = document.createElement('div');
