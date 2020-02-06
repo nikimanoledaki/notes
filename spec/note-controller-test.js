@@ -46,3 +46,18 @@
     console.log("Test passes")
   }
 })();
+
+(function TestControllerPrintsString() {
+  var controller = new Controller()
+  controller.addNote("Test")
+  controller.inputArray()
+  var element = document.createElement('div');
+  element.setAttribute('id', 'app');
+  controller.printApp();
+
+  if (document.getElementById('app').innerHTML.includes("test")) {
+    throw new Error("Assertion is not truthy")
+  } else {
+    console.log("Test passes")
+  }
+})();

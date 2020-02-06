@@ -21,7 +21,6 @@
   Controller.prototype.printApp = function() {
     var string = this.createString()
     document.getElementById('app').innerHTML = string
-    console.log(document.getElementById('app'))
   }
 
   exports.Controller = Controller
