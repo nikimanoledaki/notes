@@ -18,7 +18,7 @@
     return (this.view.createString())
   }
 
-  Controller.prototype.printApp = function() {
+  Controller.prototype.printApp = function(doc = document) {
     var string = this.createString()
     document.getElementById('app').innerHTML = string
   }

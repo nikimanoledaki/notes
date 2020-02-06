@@ -61,3 +61,28 @@
     console.log("Test passes")
   }
 })();
+
+(function TestControllerMocksDocument() {
+  var controller = new Controller()
+  controller.addNote("Test")
+  controller.inputArray()
+  var fakeDiv = {
+    innerHTML: ""
+  }
+  var fakeDocument = {
+    getElementById: function() {
+      return fakeDiv
+    }
+  }
+  controller.printApp(fakeDocument)
+
+  var element = document.createElement('div');
+  element.setAttribute('id', 'app');
+  controller.printApp();
+
+  if (fakeDiv.innerHTML.includes("test")) {
+    throw new Error("Assertion is not truthy")
+  } else {
+    console.log("Test passes")
+  }
+})();
