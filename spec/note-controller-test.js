@@ -67,7 +67,7 @@
   var controller = new Controller()
   controller.addNote("Test")
   controller.inputArray()
-
+  
   var fakeDiv = {
     innerHTML: ""
   }
