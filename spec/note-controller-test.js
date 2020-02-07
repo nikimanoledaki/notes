@@ -15,24 +15,21 @@
 (function TestControllerInputsArray() {
   var controller = new Controller()
   controller.addNote("Hi")
-  controller.inputArray()
 
-  assert.isTrue(controller.view.array.length === 1)
-  assert.isTrue(controller.view.array[0].text === "Hi")
+  assert.isTrue(controller.list.array.length === 1)
+  assert.isTrue(controller.list.array[0].text === "Hi")
 })();
 
 (function TestControllerCreatesString() {
   var controller = new Controller()
   controller.addNote("Hi")
-  controller.inputArray()
 
-  assert.isTrue(controller.createString() === "<ul><li><div>Hi</div></li></ul>")
+  assert.isTrue(controller.createString() === "<ul><li><div><a href='#0'>Hi</a></div></li></ul>")
 })();
 
 (function TestControllerPrintsString() {
   var controller = new Controller()
   controller.addNote("Test")
-  controller.inputArray()
 
   var element = document.createElement('div');
   element.setAttribute('id', 'app');
@@ -44,7 +41,6 @@
 (function TestControllerMocksDocument() {
   var controller = new Controller()
   controller.addNote("Test")
-  controller.inputArray()
 
   var fakeDiv = {
     innerHTML: ""
@@ -64,3 +60,14 @@
 
   assert.isTrue(document.getElementById('app').innerHTML.includes("Test"))
 })();
+
+// (function TestsUrlChange() {
+//   var controller = new Controller()
+//   controller.addNote("123456789012345678901234567890a")
+
+//   var element = document.createElement('div');
+//   element.setAttribute('id', 'app');
+//   document.getElementById('app').click();
+
+//   assert.isTrue(document.getElementById('app'.innerHTML.includes("123456789012345678901234567890a")))
+// })();

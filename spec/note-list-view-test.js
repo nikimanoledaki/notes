@@ -2,11 +2,8 @@
   var list = new List()
   list.newNote("Favourite food: pesto")
   list.newNote("Favourite drink: seltzer")
-  console.log(list.array)
 
-  var view = new View()
-  view.inputList(list)
-  view.modifyElements()
+  var view = new View(list)
 
-  assert.isTrue(view.createString() === "<ul><li><div>Favourite food: pest</div></li><li><div>Favourite drink: sel</div></li></ul>")
+  assert.isTrue(view.createString() === "<ul><li><div><a href='#0'>Favourite food: pest</a></div></li><li><div><a href='#1'>Favourite drink: sel</a></div></li></ul>")
 })();

@@ -2,17 +2,12 @@
 
 (function(exports) {
   function Controller() {
-    this.view = new View()
     this.list = new List()
+    this.view = new View(this.list)
   }
 
   Controller.prototype.addNote = function(text) {
     this.list.newNote(text)
-  }
-
-  Controller.prototype.inputArray = function() {
-    this.view.inputList(this.list)
-    this.view.modifyElements()
   }
 
   Controller.prototype.createString = function() {
@@ -23,6 +18,13 @@
     var string = this.createString()
     document.getElementById('app').innerHTML = string
   }
+
+  // Controller.prototype.printSingleNote = function(note) {
+  //   window.addEventListener("hashchange", function() {
+  //     var noteView = new NoteView(note)
+  //     return noteView()
+  //   })
+  // }
 
   exports.Controller = Controller
 })(this);
