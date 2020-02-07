@@ -2,6 +2,7 @@
   var list = new List()
   list.newNote("Favourite food: pesto")
   list.newNote("Favourite drink: seltzer")
+  console.log(list.array)
 
   var view = new View()
   view.inputList(list)

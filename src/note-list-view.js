@@ -9,12 +9,14 @@
 
   View.prototype.inputList = function(noteList) {
     this.array = noteList.array
+    // console.log(this.array)
   }
 
   View.prototype.modifyElements = function() {
     var newArray = []
     this.array.forEach(function(element) {
-      var newElement = element.slice(0, 20);
+      console.log(element)
+      var newElement = element.text.slice(0, 20);
       newArray.push(newElement);
     })
     this.newArray = newArray
