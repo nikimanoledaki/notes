@@ -33,15 +33,12 @@
 
   var element = document.createElement('div');
   element.setAttribute('id', 'app');
-  controller.printApp();
+  controller.printDiv();
 
   assert.isTrue(document.getElementById('app').innerHTML.includes("Test"))
 })();
 
 (function TestControllerMocksDocument() {
-  var controller = new Controller()
-  controller.addNote("Test")
-
   var fakeDiv = {
     innerHTML: ""
   }
@@ -51,23 +48,25 @@
       return fakeDiv
     }
   }
-  
-  controller.printApp(fakeDocument)
+
+  var controller = new Controller(fakeDocument)
+  controller.addNote("Test")
+  controller.printDiv()
 
   var element = document.createElement('div');
   element.setAttribute('id', 'app');
-  controller.printApp();
+  controller.printDiv();
 
   assert.isTrue(document.getElementById('app').innerHTML.includes("Test"))
 })();
 
-// (function TestsUrlChange() {
-//   var controller = new Controller()
-//   controller.addNote("123456789012345678901234567890a")
+(function TestUrlChange() {
+  var controller = new Controller();
 
-//   var element = document.createElement('div');
-//   element.setAttribute('id', 'app');
-//   document.getElementById('app').click();
+  controller.addNote("Favourite food: pesto");
+  controller.addNote("Favourite drink: orange juice");
 
-//   assert.isTrue(document.getElementById('app'.innerHTML.includes("123456789012345678901234567890a")))
-// })();
+  controller.printDiv();
+  
+  controller.makeUrlChangeShowNoteOnCurrentPage();
+})();
